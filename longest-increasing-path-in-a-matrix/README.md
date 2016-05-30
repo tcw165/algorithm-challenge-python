@@ -54,4 +54,6 @@ We can directly use the outcome from the previous visited paths. e.g: The `6->9`
 
 Eventually, the problem is a composite problem of **Path Finding** and **Dynamic Programming**.
 
-
+Application Sample
+------------------
+* To find the largest closing path from a given binary image.

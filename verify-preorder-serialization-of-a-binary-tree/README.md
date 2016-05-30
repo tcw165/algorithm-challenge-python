@@ -39,3 +39,8 @@ Solution - [link](answer.py)
 In general, you could start with by sorting the given list for almost every algorithm problem. But it's an **order-sensitive** problem, so don't sort it. You might need to think about if the problem is a `dynamic programming` problem or could be solved by `divide and conquer` strategy. Apparently, it's neither.
 
 The point to solve it is to make sure the formula, `midNo = leafNo - 1`, be fulfilled, where the `midNo` is the number of the middle nodes and the `leafNo` is the number of the leaf nodes. So you could go through the elements delimited by `','` by checking the `midNo` and `leafNo`. Since it's serialized in **pre-order**, the `leafNo` must not greater than the `midNo`, saying `leafNo < midNo - 1`. And if it happens to fulfill the formula, `midNo = leafNo - 1`, the tree is closed and there should be no more remaining nodes.
+
+Application Sample
+------------------
+
+Yet know.
