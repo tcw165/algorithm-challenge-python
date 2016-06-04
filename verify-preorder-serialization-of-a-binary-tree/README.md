@@ -40,6 +40,48 @@ In general, you could start with by sorting the given list for almost every algo
 
 The point to solve it is to make sure the formula, `midNo = leafNo - 1`, be fulfilled, where the `midNo` is the number of the middle nodes and the `leafNo` is the number of the leaf nodes. So you could go through the elements delimited by `','` by checking the `midNo` and `leafNo`. Since it's serialized in **pre-order**, the `leafNo` must not greater than the `midNo`, saying `leafNo < midNo - 1`. And if it happens to fulfill the formula, `midNo = leafNo - 1`, the tree is closed and there should be no more remaining nodes.
 
+```python
+class Solution(object):
+    def isValidSerialization(self, preorder):
+        """
+        :type preorder: str
+        :rtype: bool
+        """
+        # The number of middle nodes.
+        midNo = 0
+        # The number of leaf nodes.
+        leafNo = 0
+        # If the binary tree is closed, there should be no more remaining nodes.
+        isClosed = False
+        
+        for char in preorder.split(','):
+            if isClosed:
+                return False
+        
+            if char == '':
+                return False
+            elif char == '#':
+                leafNo += 1
+            else:
+                midNo += 1
+                # Reset the NULL accumulation.
+                nullAccum = 0
+            # The number of leaf nodes must not be greater than midNo + 1.
+            if leafNo == midNo + 1:
+                isClosed = True
+            elif leafNo > midNo + 1:
+                return False
+        
+        # The total number of nodes is 2n - 1, given n is the number of leaf
+        # nodes.
+        # print "midNo = ", midNo
+        # print "leafNo = ", leafNo
+        if midNo != leafNo - 1:
+            return False
+        else:
+            return True
+```
+
 Application Sample
 ------------------
 

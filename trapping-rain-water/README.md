@@ -12,7 +12,16 @@ Given `[0,1,0,2,1,0,1,3,2,1,2,1]`, return `6`.
 Solution - [link](answer.py)
 ----------------------------
 
-**For each ground bar we get the highest ground level on its left and right side.** The solution code is like:
+**For each ground bar we get the highest ground level on its left and right side.**
+
+* To get the highest ground level on its left side, we iterate through the heights array from left to right and save the maximum value of the current ground level and the previous highest ground level in another array, saying the `left bounds` array.
+* To get the highest ground level on its right side, we iterate through the heights array from right to left and save the maximum value of the current ground level and the previous highest ground level in another array, saying the `right bounds` array.
+
+With the `left bounds` and `right bounds` array, we're able to calculate the water level for every ground bar. The visual example is like:
+
+![...](sample-02.png)
+ 
+The solution code is like:
 
 ```python
 def trap(self, heights):
@@ -38,9 +47,7 @@ def trap(self, heights):
     return water
 ```
 
-But there's a better way by doing with two pointers from the internet. It's still missing the certain important part to convince myself. But I'll try my best.
-
-**Because the water only leaks along the direction of the lower head and lower tail sides.** Using two pointers, where one is moving from the head of the array and the other one is moving from the tail of the array, we move the lower side close to the higher side and remember the highest ground level of the current side as the water level. By comparing the ground height of current side to the water level, we're able to accumulate the water volume.
+But there's a better way by doing with two pointers from the internet. My interpretation is ... **Because the water only leaks along the direction of the lower head and lower tail sides.** Using two pointers, where one is moving from the head of the array and the other one is moving from the tail of the array, we move the lower side close to the higher side and remember the highest ground level of the current side as the water level. By comparing the ground height of current side to the water level, we're able to accumulate the water volume.
 
 ```python
 class Solution(object):
