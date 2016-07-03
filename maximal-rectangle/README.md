@@ -1,9 +1,9 @@
-Question - original [post](https://leetcode.com/problems/maximal-rectangle/)
-----------------------------------------------------------------------------
+Question - [post](https://leetcode.com/problems/maximal-rectangle/)
+--------
 
 Given a 2D binary matrix filled with 0's and 1's, find the largest rectangle containing all ones and return its area.
 
-**Example 1:**
+#### Example 1:
 
 ```
 ["10100",
@@ -14,7 +14,7 @@ Given a 2D binary matrix filled with 0's and 1's, find the largest rectangle con
 
 Return `6`
 
-**Example 2:**
+#### Example 2:
 
 ```
 ["101111",
@@ -26,7 +26,7 @@ Return `6`
 
 Return `8`
 
-**Example 3:**
+#### Example 3:
 
 ```
 ["1111",
@@ -36,8 +36,10 @@ Return `8`
 
 Return `12`
 
-Solution - [link](answer.py)
-----------------------------
+---
+
+Solution - [code](answer.py)
+--------
 
 Given a navigation that goes through the elements from the left-top one to the right-bottom one, we need to know *at a specific element, what is the certain information that defines the maximal rectangle from the previous left or top elements*. In terms of this mentor model, the problem is essentially a **Dynamic Programming** ([wiki](https://en.wikipedia.org/wiki/Dynamic_programming)) problem. So the point is ...
 
@@ -149,11 +151,13 @@ class Solution(object):
                           self.maximalRectangleInHistogram(lookupTable))
         return maxArea
 ```
-**Reference:**
+#### Reference:
 
 [![...](sample-youtube-02.png)](https://www.youtube.com/watch?v=g8bSdXCG-lA)
 
 [![...](sample-youtube-01.png)](https://www.youtube.com/watch?v=ZmnqCZp9bBs)
+
+---
 
 Application Sample
 ------------------

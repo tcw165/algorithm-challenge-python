@@ -1,5 +1,5 @@
-Question - original [post](https://leetcode.com/problems/verify-preorder-serialization-of-a-binary-tree/)
----------------------------------------------------------------------------------------------------------
+Question - [post](https://leetcode.com/problems/verify-preorder-serialization-of-a-binary-tree/)
+--------
 
 One way to serialize a binary tree is to use pre-order traversal. When we encounter a non-null node, we record the node's value. If it is a null node, we record using a sentinel value such as `#`.
 
@@ -21,20 +21,22 @@ Each comma separated value in the string must be either an integer or a characte
 
 You may assume that the input format is always valid, for example it could never contain two consecutive commas such as `"1,,3"`.
 
-**Example 1:**
+#### Example 1:
 
 `"9,3,4,#,#,1,#,#,2,#,6,#,#"` Return `true`
 
-**Example 2:**
+#### Example 2:
 
 `"1,#"` Return `false`
 
-**Example 3:**
+#### Example 3:
 
 `"9,#,#,1"` Return `false`
 
-Solution - [link](answer.py)
-----------------------------
+---
+
+Solution - [code](answer.py)
+--------
 
 In general, you could start with by sorting the given list for almost every algorithm problem. But it's an **order-sensitive** problem, so don't sort it. You might need to think about if the problem is a `dynamic programming` problem or could be solved by `divide and conquer` strategy. Apparently, it's neither.
 
@@ -81,6 +83,8 @@ class Solution(object):
         else:
             return True
 ```
+
+---
 
 Application Sample
 ------------------

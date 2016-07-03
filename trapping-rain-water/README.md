@@ -1,5 +1,5 @@
-Question - original [post](https://leetcode.com/problems/trapping-rain-water/)
-------------------------------------------------------------------------------
+Question - [post](https://leetcode.com/problems/trapping-rain-water/)
+--------
 
 Given n non-negative integers representing an elevation map where the width of each bar is 1, compute how much water it is able to trap after raining.
 
@@ -9,8 +9,10 @@ Given `[0,1,0,2,1,0,1,3,2,1,2,1]`, return `6`.
 
 ![...](sample-01.png)
 
-Solution - [link](answer.py)
-----------------------------
+---
+
+Solution - [code](answer.py)
+--------
 
 **For each ground bar we get the highest ground level on its left and right side.**
 
@@ -80,6 +82,8 @@ class Solution(object):
                 level = it
         return water
 ```
+
+---
 
 Application Sample
 ------------------
